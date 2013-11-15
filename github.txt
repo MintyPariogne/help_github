@@ -1,0 +1,57 @@
+*github.txt*	This is my personalized help file for github
+It is possible that the tag already exists. Only solutions are to delete or
+rename the tag.
+
+Table of Content~
+|com.github.help|			CLI help
+|com.github.repositories.new|		GUI needed
+
+
+*com.github.help*	url in reverse
+
+*com.github.help#install* *git.install* *install.git*
+To install in Debian derivatives >
+	!sudo apt-get install git
+
+*com.github.help#user.name* *git.user.name* *user.name* *user.name.git*
+To label the commits I make >
+	!git config --global user.name "Your Name Here"
+
+*com.github.help#user.email* *git.user.email* *user.email* *user.email.git*
+Email address is used to associate commits to your GitHub account >
+	!git conifg --global user.email "your_email@example.com"
+For password caching >
+	!git config --global credential.helper cache
+Which sets git to use the credential memory cache
+Now to cache password for one hour as setting is in seconds >
+	!git config --global credential.helper 'cache --timeout=3600'
+
+
+*com.github.repositories.new*		
+My first attempt was >
+	!firefox -new-tab https://github.com/repositories/new
+and it failed because I was not logged in. That is to say in my firefox I was
+not logged in to my Github account. In my firefox I went to github.com and logged in. I ran the ex command again and it worked.
+
+Since to be viewing this in a helpful manner you have to using vim, do this >
+	tabe ~/.gitconfig
+and see if it is correct.
+If you want this repo to have a README file then >
+	tabe README
+which should be in the same directory which you can check by >
+	echo @%
+for both files. Although it might be that you started in an empty file. Then
+the best course would be >
+	e README
+To start this git mess I type >
+	!git init
+Stage README file adding it to the lsit of files to be committed >
+	!git add README
+Commit your files, adding the message "first commit" >
+	!git commit -m 'first commit'
+Create a remote named "origin" pointing at your GitHub repo >
+	!git remote add origin https://github.com/username/repo.git
+Sends your commits in the "master branch to GitHb >
+	!git push origin master
+------------------------------------------------------------------------------
+ vim:tw=78:fo=tcq2:isk=!-~,^*,^\|,^\":ts=8:ft=help:norl:
